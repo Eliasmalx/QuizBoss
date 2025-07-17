@@ -1,81 +1,81 @@
-# Plantilla de WebApp con React JS y Flask API
+Perfecto. Aquí tienes el README base para QuizBoss, incluyendo los autores y la licencia estándar (MIT):
 
-Construye aplicaciones web usando React.js para el front end y python/flask para tu API backend.
+---
 
-- La documentación se puede encontrar aquí: https://4geeks.com/docs/start/react-flask-template
-- Aquí hay un video sobre [cómo usar esta plantilla](https://www.youtube.com/watch?v=qBz6Ddd2m38)
-- Integrado con Pipenv para la gestión de paquetes.
-- Despliegue rápido a Render [en solo unos pocos pasos aquí](https://4geeks.com/es/docs/start/despliega-con-render-com).
-- Uso del archivo .env.
-- Integración de SQLAlchemy para la abstracción de bases de datos.
+# QuizBoss
 
-### 1) Instalación:
+Juego de preguntas y respuestas donde puedes elegir diferentes temas y dificultad. Podrás subir de experiencia contestando las respuestas correctas y así desbloquear nuevos rankings. 🧠
 
-> Si usas Github Codespaces (recomendado) o Gitpod, esta plantilla ya vendrá con Python, Node y la base de datos Posgres instalados. Si estás trabajando localmente, asegúrate de instalar Python 3.10, Node.
+## Características principales
 
-Se recomienda instalar el backend primero, asegúrate de tener Python 3.10, Pipenv y un motor de base de datos (se recomienda Posgres).
+- Selección de diferentes temas para jugar.
+- Niveles de dificultad ajustables.
+- Sistema de experiencia: gana puntos al contestar correctamente.
+- Rankings desbloqueables según el progreso.
+- Interfaz intuitiva y dinámica.
 
-1. Instala los paquetes de python: `$ pipenv install`
-2. Crea un archivo .env basado en el .env.example: `$ cp .env.example .env`
-3. Instala tu motor de base de datos y crea tu base de datos, dependiendo de tu base de datos, debes crear una variable DATABASE_URL con uno de los valores posibles, asegúrate de reemplazar los valores con la información de tu base de datos:
+## Tecnologías utilizadas
 
-| Motor     | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgres  | postgres://username:password@localhost:5432/example |
+- **Frontend:** JavaScript, React.js, CSS, HTML
+- **Backend:** Python, Flask, SQLAlchemy
+- **Otros:** Dockerfile, Mako
 
-4. Migra las migraciones: `$ pipenv run migrate` (omite si no has hecho cambios en los modelos en `./src/api/models.py`)
-5. Ejecuta las migraciones: `$ pipenv run upgrade`
-6. Ejecuta la aplicación: `$ pipenv run start`
+## Instalación
 
-> Nota: Los usuarios de Codespaces pueden conectarse a psql escribiendo: `psql -h localhost -U gitpod example`
+### Backend
 
-### Deshacer una migración
+1. Instala los paquetes de Python:
+   ```bash
+   pipenv install
+   ```
+2. Crea tu archivo `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+3. Configura tu base de datos y la variable `DATABASE_URL` según el motor que uses (SQLite, MySQL, Postgres).
+4. Aplica las migraciones:
+   ```bash
+   pipenv run migrate
+   pipenv run upgrade
+   ```
+5. Ejecuta la aplicación:
+   ```bash
+   pipenv run start
+   ```
 
-También puedes deshacer una migración ejecutando
+### Frontend
 
-```sh
-$ pipenv run downgrade
-```
+1. Instala los paquetes de Node:
+   ```bash
+   npm install
+   ```
+2. Inicia el servidor de desarrollo:
+   ```bash
+   npm run start
+   ```
 
-### Población de la tabla de usuarios en el backend
+## Cómo jugar
 
-Para insertar usuarios de prueba en la base de datos, ejecuta el siguiente comando:
+1. Regístrate o inicia sesión en la plataforma.
+2. Elige un tema y nivel de dificultad.
+3. Responde las preguntas correctamente para ganar experiencia.
+4. Desbloquea rankings y compite con otros usuarios.
 
-```sh
-$ flask insert-test-users 5
-```
+## Despliegue
 
-Y verás el siguiente mensaje:
+La aplicación está preparada para desplegarse fácilmente en plataformas como Render.com y Heroku. Consulta la [documentación oficial](https://4geeks.com/docs/start/deploy-to-render-com) para más detalles.
 
-```
-    Creating test users
-    test_user1@test.com created.
-    test_user2@test.com created.
-    test_user3@test.com created.
-    test_user4@test.com created.
-    test_user5@test.com created.
-    Users created successfully!
-```
+## Autores
 
-### **Nota importante para la base de datos y los datos dentro de ella**
+- Eliasmal
+- Erika
+- David
+- Nelcy
 
-Cada entorno de Github Codespace tendrá **su propia base de datos**, por lo que si estás trabajando con más personas, cada uno tendrá una base de datos diferente y diferentes registros dentro de ella. Estos datos **se perderán**, así que no pases demasiado tiempo creando registros manualmente para pruebas, en su lugar, puedes automatizar la adición de registros a tu base de datos editando el archivo ```commands.py``` dentro de la carpeta ```/src/api```. Edita la línea 32 de la función ```insert_test_data``` para insertar los datos según tu modelo (usa la función ```insert_test_users``` anterior como ejemplo). Luego, todo lo que necesitas hacer es ejecutar ```pipenv run insert-test-data```.
+## Licencia
 
-### Instalación manual del Front-End:
+Este proyecto está bajo la Licencia MIT.
 
--   Asegúrate de estar usando la versión 20 de node y de que ya hayas instalado y ejecutado correctamente el backend.
+---
 
-1. Instala los paquetes: `$ npm install`
-2. ¡Empieza a codificar! inicia el servidor de desarrollo de webpack `$ npm run start`
-
-## ¡Publica tu sitio web!
-
-Esta plantilla está 100% lista para desplegarse con Render.com y Heroku en cuestión de minutos. Por favor, lee la [documentación oficial al respecto](https://4geeks.com/docs/start/deploy-to-render-com).
-
-### Contribuyentes
-
-Esta plantilla fue construida como parte del [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) de 4Geeks Academy por [Alejandro Sanchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. Descubre más sobre nuestro [Curso de Desarrollador Full Stack](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) y [Bootcamp de Ciencia de Datos](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
-
-Puedes encontrar otras plantillas y recursos como este en la [página de github de la escuela](https://github.com/4geeksacademy/).
+Puedes agregar o modificar cualquier otro detalle manualmente según lo necesites.
