@@ -1,7 +1,3 @@
-Perfecto. Aquí tienes el README base para QuizBoss, incluyendo los autores y la licencia estándar (MIT):
-
----
-
 # QuizBoss
 
 Juego de preguntas y respuestas donde puedes elegir diferentes temas y dificultad. Podrás subir de experiencia contestando las respuestas correctas y así desbloquear nuevos rankings. 🧠
@@ -77,5 +73,3 @@ La aplicación está preparada para desplegarse fácilmente en plataformas como 
 Este proyecto está bajo la Licencia MIT.
 
 ---
-
-Puedes agregar o modificar cualquier otro detalle manualmente según lo necesites.
